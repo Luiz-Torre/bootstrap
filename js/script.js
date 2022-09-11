@@ -1,5 +1,16 @@
-function showToast(e){
-    e.preventDefault()     
-    $("#myToast").toast('show'); 
-    document.getElementsByName('data-form')[0].reset()
+function showAlert(event, form) {
+    event.preventDefault();
+    $("#myAlert").css("display", "");
+    setTimeout(function () {
+        form.submit();
+
+
+    }, 5000);
+
+
+}
+
+function showToast() {
+    $("#myToast").toast("show");
+
 }

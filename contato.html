@@ -47,9 +47,10 @@
         </div>
 
     </nav>
+
     <div class="container" id="formulario">
 
-        <form class="well form-horizontal" action=" " method="" id="contact_form">
+        <form class="well form-horizontal" action=" " method="" id="form_contato">
             <fieldset>
 
                 <legend>Entre em Contato conosco!</legend>
@@ -110,25 +111,46 @@
                     </div>
                 </div>
 
-                <div class="alert alert-success" role="alert" id="success_message">Sucesso <i
-                        class="glyphicon glyphicon-thumbs-up"></i> Obrigado por entrar em contato. Responderemos assim
-                    que possível!</div>
-
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4">
-                        <button onclick="(() => e.toast('show'))" type="submit" class="btn btn-warning">Enviar <span
-                                class="glyphicon glyphicon-send"></span></button>
+                        <button value="showAlert" onclick="showAlert(event,form_contato)" type="submit"
+                            class="btn btn-warning">Enviar <span class="glyphicon glyphicon-send"></span></button>
+
+
                     </div>
 
-                </div>
 
+                    <div class="container" style="display:none;" id="myAlert">
+                        <div class="alert alert-success alert-dismissable" id="myAlert2">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                            Mensagem enviada com sucesso! A pagina será atualiza em 5 segundos.
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="toast" id="myToast" data-delay="3000">
+                        <div class="toast-body">
+                            Bem vindo a página de contato. Por favor deixe sua mensagem e/ou feedback e responderemos
+                            assim que possível!
+                        </div>
+
+                    </div>
+                </div>
             </fieldset>
         </form>
     </div>
     </div>
 
-    <div class="footer row">
+
+
+
+
+
+    <div class="footer row justify-content-md-center">
         <div class="footerpt1">
 
             <h4>Shopping Lorem Ipsum</h4>
@@ -169,7 +191,9 @@
 
     <script src="js/script.js"></script>
 
-
+    <script>
+        showToast();
+    </script>
 
 </body>
 
